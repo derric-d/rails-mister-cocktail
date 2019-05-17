@@ -1,0 +1,21 @@
+<div class="row">
+
+
+  <% @cocktails.each do |cocktail| %>
+
+      <%#= link_to cocktail.name, cocktail_path(cocktail) %>
+      <%#= link_to "", cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure' }  %>
+      <%#= render partial: 'card'%>
+    <div class="col-md-3">
+      <%= link_to cocktail_path(cocktail) do   %>
+
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <span class="cocktail-name"><%= cocktail.name %></span>
+
+            <div class="delete-link"><%= link_to "✗", cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure' }  %></div>
+
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
