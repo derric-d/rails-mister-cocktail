@@ -1,19 +1,12 @@
 <div class="row">
-
-
   <% @cocktails.each do |cocktail| %>
-
-      <%#= link_to cocktail.name, cocktail_path(cocktail) %>
-      <%#= link_to "", cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure' }  %>
-      <%#= render partial: 'card'%>
     <div class="col-md-3">
-      <%= link_to cocktail_path(cocktail) do   %>
-
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo) : 'https://images.unsplash.com/photo-1542847890-8c4210389b23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60' %>')">
+      <%= link_to cocktail_path(cocktail) do %>
+          <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo) : 'https://images.unsplash.com/photo-1542847890-8c4210389b23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60' %>')">
             <span class="cocktail-name"><%= cocktail.name %></span>
-
-            <div class="delete-link"><%= link_to "✗", cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure' }  %></div>
-
+            <div class="delete-link">
+              <%= link_to "✗", cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure' }  %>
+            </div>
           </div>
       <% end %>
     </div>
