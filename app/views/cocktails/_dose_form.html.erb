@@ -1,4 +1,4 @@
-<div class="container">>
+<div class="container">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <div class="form-check">
       <%= f.association :ingredient, collection: Ingredient.all.order(:name) %>
